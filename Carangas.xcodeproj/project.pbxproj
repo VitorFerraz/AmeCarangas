@@ -21,6 +21,7 @@
 		88B2C13622C6A588001A2F83 /* CarsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 88B2C13522C6A588001A2F83 /* CarsMock.json */; };
 		88B2C14622C6A69E001A2F83 /* CarsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B2C14522C6A69E001A2F83 /* CarsViewModelTests.swift */; };
 		88B2C14822C6A6CC001A2F83 /* CarDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B2C14722C6A6CC001A2F83 /* CarDetailViewModelTests.swift */; };
+		88B2C14A22C6A86C001A2F83 /* CarMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 88B2C14922C6A86C001A2F83 /* CarMock.json */; };
 		A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16BA8661F953B940045AD32 /* AddEditViewController.swift */; };
 		A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE11F92C57D00A25342 /* AppDelegate.swift */; };
 		A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE31F92C57D00A25342 /* CarViewController.swift */; };
@@ -62,6 +63,7 @@
 		88B2C13F22C6A59A001A2F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88B2C14522C6A69E001A2F83 /* CarsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModelTests.swift; sourceTree = "<group>"; };
 		88B2C14722C6A6CC001A2F83 /* CarDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewModelTests.swift; sourceTree = "<group>"; };
+		88B2C14922C6A86C001A2F83 /* CarMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CarMock.json; sourceTree = "<group>"; };
 		A16BA8661F953B940045AD32 /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 		A19C4BDE1F92C57D00A25342 /* Carangas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carangas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19C4BE11F92C57D00A25342 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		88B2C13422C6A577001A2F83 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				88B2C14922C6A86C001A2F83 /* CarMock.json */,
 				88B2C13522C6A588001A2F83 /* CarsMock.json */,
 			);
 			path = Mocks;
@@ -354,6 +357,7 @@
 			files = (
 				88B2C13622C6A588001A2F83 /* CarsMock.json in Resources */,
 				A19C4BEC1F92C57D00A25342 /* LaunchScreen.storyboard in Resources */,
+				88B2C14A22C6A86C001A2F83 /* CarMock.json in Resources */,
 				A19C4BE91F92C57D00A25342 /* Assets.xcassets in Resources */,
 				A19C4BE71F92C57D00A25342 /* Main.storyboard in Resources */,
 			);

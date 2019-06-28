@@ -13,12 +13,17 @@ class CarDetailViewModelTests: XCTestCase {
     var sut: CarDetailViewModel!
     override func setUp() {
         super.setUp()
-        sut = CarDetailViewModel(repository: CarMockRemoteRepository(), car: <#T##Car#>)
+        let car: Car = Car.fromJSON("CarMock")!
+        sut = CarDetailViewModel(car: car)
     }
 
     override func tearDown() {
         super.tearDown()
         sut = nil
+    }
+    
+    func testViewModelCurrencyFormatter_ExpectToFormatValue() {
+        XCTAssertEqual(sut.price, "R$ 9.000.000,00")
     }
 
 }
