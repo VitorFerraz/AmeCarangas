@@ -30,11 +30,11 @@ class CarsTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier! == "carSegue" {
-            let vc = segue.destination as! CarViewController
-            if let indexPath = tableView.indexPathForSelectedRow {
-                vc.car = viewModel.car(for: indexPath)
-            }
+        if let vc = segue.destination as? CarViewController,
+            let indexPath = tableView.indexPathForSelectedRow,
+            segue.identifier! == "carSegue" {
+            guard let car = viewModel.car(for: indexPath) else {return}
+                vc.viewModel = CarDetailViewModel(car: car)
         }
     }
     

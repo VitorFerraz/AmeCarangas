@@ -12,6 +12,8 @@
 		49E877F922C5A78C003009C0 /* CarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E877F822C5A78C003009C0 /* CarService.swift */; };
 		49F28CAB22C5AFEE0012C485 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28CAA22C5AFEE0012C485 /* NetworkEngine.swift */; };
 		49F28CB422C5B4FD0012C485 /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28CB322C5B4FD0012C485 /* CarRepository.swift */; };
+		883E803C22C659B3009DF7FC /* CarDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E803B22C659B3009DF7FC /* CarDetailViewModel.swift */; };
+		883E803E22C65CA3009DF7FC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883E803D22C65CA3009DF7FC /* WebKit.framework */; };
 		A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16BA8661F953B940045AD32 /* AddEditViewController.swift */; };
 		A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE11F92C57D00A25342 /* AppDelegate.swift */; };
 		A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE31F92C57D00A25342 /* CarViewController.swift */; };
@@ -32,6 +34,8 @@
 		49E877F822C5A78C003009C0 /* CarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarService.swift; sourceTree = "<group>"; };
 		49F28CAA22C5AFEE0012C485 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		49F28CB322C5B4FD0012C485 /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepository.swift; sourceTree = "<group>"; };
+		883E803B22C659B3009DF7FC /* CarDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewModel.swift; sourceTree = "<group>"; };
+		883E803D22C65CA3009DF7FC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A16BA8661F953B940045AD32 /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 		A19C4BDE1F92C57D00A25342 /* Carangas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carangas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19C4BE11F92C57D00A25342 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				883E803E22C65CA3009DF7FC /* WebKit.framework in Frameworks */,
 				B2D85B95F9C7E20BD53759C8 /* Pods_Carangas.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				492D07B922C62D8F004DAB1A /* CarsViewModel.swift */,
+				883E803B22C659B3009DF7FC /* CarDetailViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -104,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				49F28CB222C5B4E10012C485 /* Repositories */,
-				49F28CAC22C5B3EB0012C485 /* Provider */,
 				49F28CA922C5AFA70012C485 /* Engine */,
 				49E877F722C5A766003009C0 /* Services */,
 				49E877F322C5A37A003009C0 /* Constants */,
@@ -126,13 +131,6 @@
 				49F28CAA22C5AFEE0012C485 /* NetworkEngine.swift */,
 			);
 			path = Engine;
-			sourceTree = "<group>";
-		};
-		49F28CAC22C5B3EB0012C485 /* Provider */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Provider;
 			sourceTree = "<group>";
 		};
 		49F28CB222C5B4E10012C485 /* Repositories */ = {
@@ -190,6 +188,7 @@
 		DF2D480B3AD22F9D41543496 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				883E803D22C65CA3009DF7FC /* WebKit.framework */,
 				23D39E39FAC7AA7EBA453471 /* Pods_Carangas.framework */,
 			);
 			name = Frameworks;
@@ -328,6 +327,7 @@
 				A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */,
 				49F28CAB22C5AFEE0012C485 /* NetworkEngine.swift in Sources */,
 				A19C4BF41F92C8CB00A25342 /* REST.swift in Sources */,
+				883E803C22C659B3009DF7FC /* CarDetailViewModel.swift in Sources */,
 				A19C4BF61F92C91C00A25342 /* Car.swift in Sources */,
 				49F28CB422C5B4FD0012C485 /* CarRepository.swift in Sources */,
 				A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */,

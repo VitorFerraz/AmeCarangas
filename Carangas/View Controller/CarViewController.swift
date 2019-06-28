@@ -25,30 +25,32 @@ class CarViewController: UIViewController {
     //https://developer.apple.com/documentation/webkit/wkwebview
     @IBOutlet weak var webView: WKWebView!
     
-    var car: Car!
-
+    
+    var viewModel: CarDetailViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard let viewModel = viewModel else { return }
+        setupUI(with: viewModel)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! AddEditViewController
+        vc.car = viewModel.car
+    }
+    
+    func setupUI(with viewModel: CarDetailViewModel) {
+        title = viewModel.name
         
-        title = car.name
-        lbBrand.text = car.brand
+        lbBrand.text = viewModel.brand
+        lbPrice.text = viewModel.price
+        lbGasType.text = viewModel.gas
         
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencySymbol = "R$ "
-        formatter.locale = Locale(identifier: "pt-BR")
-        formatter.alwaysShowsDecimalSeparator = true
-        
-        lbPrice.text = formatter.string(for: car.price)!
-        lbGasType.text = car.gas
-        
-        let name = (title! + "+" + car.brand).replacingOccurrences(of: " ", with: "+")
-        let urlString = "https://www.google.com.br/search?q=\(name)&tbm=isch"
-        print(name)
+        let urlString = "https://www.google.com.br/search?q=\(viewModel.nameSearch)&tbm=isch"
         let url = URL(string: urlString)
         let request = URLRequest(url: url!)
         
@@ -57,15 +59,7 @@ class CarViewController: UIViewController {
         webView.navigationDelegate = self
         webView.uiDelegate = self
         webView.load(request)
-        
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! AddEditViewController
-        vc.car = car
-    }
-
-
 }
 
 extension CarViewController: WKNavigationDelegate, WKUIDelegate {
@@ -77,14 +71,6 @@ extension CarViewController: WKNavigationDelegate, WKUIDelegate {
     }
     
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
-        print("Rodou o alerta ->", message)
-        /*
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            completionHandler()
-        }))
-        present(alert, animated: true, completion: nil)
-         */
         completionHandler()
     }
 }

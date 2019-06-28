@@ -41,11 +41,6 @@ class CarsViewModel {
     }
     
     func car(for indexPath: IndexPath) -> Car? {
-//        if cars.indices.contains(indexPath.row) {
-//            return cars[indexPath.row]
-//        } else {
-//            return nil
-//        }
         return cars.indices.contains(indexPath.row) ? cars[indexPath.row] : nil
     }
     
@@ -71,7 +66,6 @@ class CarsViewModel {
                 self.removeCar(at: indexPath)
             }
             completion()
-
         }
     }
 }
