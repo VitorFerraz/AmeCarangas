@@ -7,8 +7,8 @@
 //
 
 import UIKit
-class CarDetailViewModel {
-    let repository: CarRepository
+final class CarDetailViewModel {
+    private let repository: CarRepository
     private (set) var car: Car
     private var formatter: NumberFormatter = {
         let formatter = NumberFormatter()

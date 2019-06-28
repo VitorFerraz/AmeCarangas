@@ -7,8 +7,8 @@
 //
 
 import Foundation
-class CarsViewModel {
-    let repository: CarRepository
+final class CarsViewModel {
+    private let repository: CarRepository
     var stateChange: (()-> Void)?
     private var cars: [Car] = [] {
         didSet {

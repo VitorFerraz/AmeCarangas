@@ -19,7 +19,7 @@ class Car: Codable {
         switch gasType {
             case 0:
                 return "Flex"
-            case 0:
+            case 1:
                 return "Álcool"
             default:
                 return "Gasolina"

@@ -17,10 +17,7 @@ class AddEditViewController: UIViewController {
     @IBOutlet weak var btAddEdit: UIButton!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     
-    let repository: CarRepository = CarRemoteRepository()
-    var car: Car!
-    var brands: [Brand] = []
-    let formatter = NumberFormatter()
+    var viewModel = AddEditCarViewModel()
     lazy var brandPickerView: UIPickerView = {
         let pickerView = UIPickerView()
         pickerView.delegate = self
@@ -31,12 +28,11 @@ class AddEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if car != nil {
-            tfBrand.text = car.brand
-            tfName.text = car.name
-            formatter.currencySymbol = "R$ "
-            tfPrice.text = formatter.string(from: NSNumber(value: car.price))
-            scGasType.selectedSegmentIndex = car.gasType
+        if viewModel.currentState == .edit {
+            tfBrand.text = viewModel.brand
+            tfName.text = viewModel.name
+            tfPrice.text = viewModel.price
+            scGasType.selectedSegmentIndex = viewModel.gasType
             btAddEdit.setTitle("Alterar", for: .normal)
         }
         
@@ -57,20 +53,17 @@ class AddEditViewController: UIViewController {
     }
     
     @objc func done() {
-        tfBrand.text = brands[brandPickerView.selectedRow(inComponent: 0)].fipe_name
+        if let brand = viewModel.getBrand(at: brandPickerView.selectedRow(inComponent: 0)) {
+             tfBrand.text = brand.fipe_name
+        }
+       
         cancel()
     }
     
     func loadBrands() {
-        repository.loadBrands { (result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let brands):
-                self.brands = brands.sorted(by: {$0.fipe_name < $1.fipe_name})
-                DispatchQueue.main.async {
-                    self.brandPickerView.reloadAllComponents()
-                }
+        viewModel.loadBrands {
+            DispatchQueue.main.async {
+                self.brandPickerView.reloadAllComponents()
             }
         }
     }
@@ -83,39 +76,19 @@ class AddEditViewController: UIViewController {
         
         loading.startAnimating()
         
-        if car == nil {
-            car = Car()
-        }
-        car.brand = tfBrand.text!
-        car.name = tfName.text!
-        car.gasType = scGasType.selectedSegmentIndex
         
-        let formatter = NumberFormatter()
-        if let price = formatter.number(from: tfPrice.text!)?.doubleValue {
-            car.price = price
-        } else {
-            car.price = 0
-        }
-        if car._id == nil {
-            repository.save(car: car) { (result) in
-                switch result {
-                case .failure(let error):
-                    print(error)
-                case .success:
-                    self.goBack()
-                }
-            }
-        } else {
-            repository.delete(car: car) { (result) in
-                switch result {
-                case .failure(let error):
-                    print(error)
-                case .success:
-                    self.goBack()
-                }
-            }
-        }
-
+        
+        viewModel.addEditCar(brand: tfBrand.text!,
+                            name: tfName.text!,
+                            gasType: scGasType.selectedSegmentIndex,
+                            price: tfPrice.text!, completion: { result in
+                                switch result {
+                                case .failure(let error):
+                                    print(error.localizedDescription)
+                                case .success:
+                                    self.goBack()
+                                }
+        })
     }
     
     func goBack() {
@@ -132,11 +105,11 @@ extension AddEditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return brands.count
+        return viewModel.numberOfBrands
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let brand = brands[row]
+        guard let brand = viewModel.getBrand(at: row) else { return "" }
         return brand.fipe_name
     }
 }

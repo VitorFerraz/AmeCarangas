@@ -40,7 +40,8 @@ class CarViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! AddEditViewController
-        vc.car = viewModel.car
+        let car = viewModel.car
+        vc.viewModel = AddEditCarViewModel(car: car)
     }
     
     func setupUI(with viewModel: CarDetailViewModel) {
@@ -74,12 +75,3 @@ extension CarViewController: WKNavigationDelegate, WKUIDelegate {
         completionHandler()
     }
 }
-
-
-
-
-
-
-
-
-

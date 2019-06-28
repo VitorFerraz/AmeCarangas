@@ -12,8 +12,11 @@
 		49E877F922C5A78C003009C0 /* CarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E877F822C5A78C003009C0 /* CarService.swift */; };
 		49F28CAB22C5AFEE0012C485 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28CAA22C5AFEE0012C485 /* NetworkEngine.swift */; };
 		49F28CB422C5B4FD0012C485 /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28CB322C5B4FD0012C485 /* CarRepository.swift */; };
+		88217ABD22C690DF003FA54D /* AddEditCarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88217ABC22C690DF003FA54D /* AddEditCarViewModel.swift */; };
 		883E803C22C659B3009DF7FC /* CarDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E803B22C659B3009DF7FC /* CarDetailViewModel.swift */; };
 		883E803E22C65CA3009DF7FC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883E803D22C65CA3009DF7FC /* WebKit.framework */; };
+		88B2C12E22C69EC3001A2F83 /* CarMockRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B2C12D22C69EC3001A2F83 /* CarMockRemoteRepository.swift */; };
+		88B2C13022C69ED0001A2F83 /* CarRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B2C12F22C69ED0001A2F83 /* CarRemoteRepository.swift */; };
 		A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16BA8661F953B940045AD32 /* AddEditViewController.swift */; };
 		A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE11F92C57D00A25342 /* AppDelegate.swift */; };
 		A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE31F92C57D00A25342 /* CarViewController.swift */; };
@@ -34,8 +37,11 @@
 		49E877F822C5A78C003009C0 /* CarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarService.swift; sourceTree = "<group>"; };
 		49F28CAA22C5AFEE0012C485 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
 		49F28CB322C5B4FD0012C485 /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepository.swift; sourceTree = "<group>"; };
+		88217ABC22C690DF003FA54D /* AddEditCarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEditCarViewModel.swift; sourceTree = "<group>"; };
 		883E803B22C659B3009DF7FC /* CarDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewModel.swift; sourceTree = "<group>"; };
 		883E803D22C65CA3009DF7FC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		88B2C12D22C69EC3001A2F83 /* CarMockRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMockRemoteRepository.swift; sourceTree = "<group>"; };
+		88B2C12F22C69ED0001A2F83 /* CarRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRemoteRepository.swift; sourceTree = "<group>"; };
 		A16BA8661F953B940045AD32 /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 		A19C4BDE1F92C57D00A25342 /* Carangas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carangas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19C4BE11F92C57D00A25342 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +98,7 @@
 		492D07B822C62D60004DAB1A /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				88217ABC22C690DF003FA54D /* AddEditCarViewModel.swift */,
 				492D07B922C62D8F004DAB1A /* CarsViewModel.swift */,
 				883E803B22C659B3009DF7FC /* CarDetailViewModel.swift */,
 			);
@@ -137,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				49F28CB322C5B4FD0012C485 /* CarRepository.swift */,
+				88B2C12D22C69EC3001A2F83 /* CarMockRemoteRepository.swift */,
+				88B2C12F22C69ED0001A2F83 /* CarRemoteRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -323,13 +332,16 @@
 				A19C4BF81F92C99600A25342 /* CarsTableViewController.swift in Sources */,
 				49E877F922C5A78C003009C0 /* CarService.swift in Sources */,
 				A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */,
+				88B2C12E22C69EC3001A2F83 /* CarMockRemoteRepository.swift in Sources */,
 				492D07BA22C62D8F004DAB1A /* CarsViewModel.swift in Sources */,
 				A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */,
 				49F28CAB22C5AFEE0012C485 /* NetworkEngine.swift in Sources */,
 				A19C4BF41F92C8CB00A25342 /* REST.swift in Sources */,
+				88217ABD22C690DF003FA54D /* AddEditCarViewModel.swift in Sources */,
 				883E803C22C659B3009DF7FC /* CarDetailViewModel.swift in Sources */,
 				A19C4BF61F92C91C00A25342 /* Car.swift in Sources */,
 				49F28CB422C5B4FD0012C485 /* CarRepository.swift in Sources */,
+				88B2C13022C69ED0001A2F83 /* CarRemoteRepository.swift in Sources */,
 				A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
