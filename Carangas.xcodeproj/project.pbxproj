@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49E877F522C5A392003009C0 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E877F422C5A392003009C0 /* NetworkConstants.swift */; };
+		49E877F922C5A78C003009C0 /* CarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E877F822C5A78C003009C0 /* CarService.swift */; };
+		49F28CAB22C5AFEE0012C485 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28CAA22C5AFEE0012C485 /* NetworkEngine.swift */; };
+		49F28CB422C5B4FD0012C485 /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28CB322C5B4FD0012C485 /* CarRepository.swift */; };
 		A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16BA8661F953B940045AD32 /* AddEditViewController.swift */; };
 		A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE11F92C57D00A25342 /* AppDelegate.swift */; };
 		A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE31F92C57D00A25342 /* CarViewController.swift */; };
@@ -16,9 +20,16 @@
 		A19C4BF41F92C8CB00A25342 /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BF31F92C8CB00A25342 /* REST.swift */; };
 		A19C4BF61F92C91C00A25342 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BF51F92C91C00A25342 /* Car.swift */; };
 		A19C4BF81F92C99600A25342 /* CarsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BF71F92C99600A25342 /* CarsTableViewController.swift */; };
+		B2D85B95F9C7E20BD53759C8 /* Pods_Carangas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D39E39FAC7AA7EBA453471 /* Pods_Carangas.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0811F6A8EDBD7021ABDE3665 /* Pods-Carangas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carangas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Carangas/Pods-Carangas.release.xcconfig"; sourceTree = "<group>"; };
+		23D39E39FAC7AA7EBA453471 /* Pods_Carangas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Carangas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49E877F422C5A392003009C0 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		49E877F822C5A78C003009C0 /* CarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarService.swift; sourceTree = "<group>"; };
+		49F28CAA22C5AFEE0012C485 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
+		49F28CB322C5B4FD0012C485 /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepository.swift; sourceTree = "<group>"; };
 		A16BA8661F953B940045AD32 /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 		A19C4BDE1F92C57D00A25342 /* Carangas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carangas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19C4BE11F92C57D00A25342 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +41,7 @@
 		A19C4BF31F92C8CB00A25342 /* REST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
 		A19C4BF51F92C91C00A25342 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		A19C4BF71F92C99600A25342 /* CarsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTableViewController.swift; sourceTree = "<group>"; };
+		F116BA5878D90D1E1A81D1E9 /* Pods-Carangas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carangas.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Carangas/Pods-Carangas.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +49,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2D85B95F9C7E20BD53759C8 /* Pods_Carangas.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49E877F322C5A37A003009C0 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				49E877F422C5A392003009C0 /* NetworkConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		49E877F622C5A75A003009C0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				49F28CB222C5B4E10012C485 /* Repositories */,
+				49F28CAC22C5B3EB0012C485 /* Provider */,
+				49F28CA922C5AFA70012C485 /* Engine */,
+				49E877F722C5A766003009C0 /* Services */,
+				49E877F322C5A37A003009C0 /* Constants */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		49E877F722C5A766003009C0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				49E877F822C5A78C003009C0 /* CarService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		49F28CA922C5AFA70012C485 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				49F28CAA22C5AFEE0012C485 /* NetworkEngine.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		49F28CAC22C5B3EB0012C485 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		49F28CB222C5B4E10012C485 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				49F28CB322C5B4FD0012C485 /* CarRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		7651860368E492DDD0E48D98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F116BA5878D90D1E1A81D1E9 /* Pods-Carangas.debug.xcconfig */,
+				0811F6A8EDBD7021ABDE3665 /* Pods-Carangas.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A19C4BD51F92C57D00A25342 = {
 			isa = PBXGroup;
 			children = (
 				A19C4BE01F92C57D00A25342 /* Carangas */,
 				A19C4BDF1F92C57D00A25342 /* Products */,
+				7651860368E492DDD0E48D98 /* Pods */,
+				DF2D480B3AD22F9D41543496 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +137,7 @@
 		A19C4BE01F92C57D00A25342 /* Carangas */ = {
 			isa = PBXGroup;
 			children = (
+				49E877F622C5A75A003009C0 /* Network */,
 				A19C4BE11F92C57D00A25342 /* AppDelegate.swift */,
 				A19C4BE31F92C57D00A25342 /* CarViewController.swift */,
 				A19C4BF71F92C99600A25342 /* CarsTableViewController.swift */,
@@ -76,6 +152,14 @@
 			path = Carangas;
 			sourceTree = "<group>";
 		};
+		DF2D480B3AD22F9D41543496 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23D39E39FAC7AA7EBA453471 /* Pods_Carangas.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A19C4BF01F92C57D00A25342 /* Build configuration list for PBXNativeTarget "Carangas" */;
 			buildPhases = (
+				5405AA4253CD5BF20DBA6C19 /* [CP] Check Pods Manifest.lock */,
 				A19C4BDA1F92C57D00A25342 /* Sources */,
 				A19C4BDB1F92C57D00A25342 /* Frameworks */,
 				A19C4BDC1F92C57D00A25342 /* Resources */,
+				317BD0FB73E6FC12F0D97652 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -143,16 +229,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		317BD0FB73E6FC12F0D97652 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Carangas/Pods-Carangas-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Carangas/Pods-Carangas-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5405AA4253CD5BF20DBA6C19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Carangas-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A19C4BDA1F92C57D00A25342 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E877F522C5A392003009C0 /* NetworkConstants.swift in Sources */,
 				A19C4BF81F92C99600A25342 /* CarsTableViewController.swift in Sources */,
+				49E877F922C5A78C003009C0 /* CarService.swift in Sources */,
 				A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */,
 				A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */,
+				49F28CAB22C5AFEE0012C485 /* NetworkEngine.swift in Sources */,
 				A19C4BF41F92C8CB00A25342 /* REST.swift in Sources */,
 				A19C4BF61F92C91C00A25342 /* Car.swift in Sources */,
+				49F28CB422C5B4FD0012C485 /* CarRepository.swift in Sources */,
 				A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +429,7 @@
 		};
 		A19C4BF11F92C57D00A25342 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F116BA5878D90D1E1A81D1E9 /* Pods-Carangas.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +445,7 @@
 		};
 		A19C4BF21F92C57D00A25342 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0811F6A8EDBD7021ABDE3665 /* Pods-Carangas.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

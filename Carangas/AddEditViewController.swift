@@ -17,6 +17,7 @@ class AddEditViewController: UIViewController {
     @IBOutlet weak var btAddEdit: UIButton!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     
+    let repository: CarRepository = CarRemoteRepository()
     var car: Car!
     var brands: [Brand] = []
     let formatter = NumberFormatter()
@@ -61,16 +62,16 @@ class AddEditViewController: UIViewController {
     }
     
     func loadBrands() {
-        REST.loadBrands { (brands) in
-            guard let brands = brands else {
-                print("ERRO")
-                return
+        repository.loadBrands { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let brands):
+                self.brands = brands.sorted(by: {$0.fipe_name < $1.fipe_name})
+                DispatchQueue.main.async {
+                    self.brandPickerView.reloadAllComponents()
+                }
             }
-            self.brands = brands.sorted(by: {$0.fipe_name < $1.fipe_name})
-            DispatchQueue.main.async {
-                self.brandPickerView.reloadAllComponents()
-            }
-            
         }
     }
 
@@ -96,12 +97,22 @@ class AddEditViewController: UIViewController {
             car.price = 0
         }
         if car._id == nil {
-            REST.saveCar(car: car) { (success) in
-                self.goBack()
+            repository.save(car: car) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success:
+                    self.goBack()
+                }
             }
         } else {
-            REST.updateCar(car: car) { (success) in
-                self.goBack()
+            repository.delete(car: car) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success:
+                    self.goBack()
+                }
             }
         }
 

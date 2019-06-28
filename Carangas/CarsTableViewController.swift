@@ -9,7 +9,8 @@
 import UIKit
 
 class CarsTableViewController: UITableViewController {
-
+    let repository: CarRepository = CarRemoteRepository()
+    
     var cars: [Car] = []
     var label: UILabel = {
         let label = UILabel()
@@ -36,21 +37,18 @@ class CarsTableViewController: UITableViewController {
     }
     
     func loadCars() {
-        REST.loadCars(onComplete: { (cars) in
-            self.cars = cars
-            DispatchQueue.main.async {
-                self.label.text = "Não existem carros cadastrados."
-                self.tableView.reloadData()
-            }
-        }) { (error: CarError) in
-            switch error {
-                case .responseStatusCode(let code):
-                    print(code)
-                default:
-                    break
+        repository.loadCars { (result) in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let cars):
+                self.cars = cars
+                DispatchQueue.main.async {
+                    self.label.text = "Não existem carros cadastrados."
+                    self.tableView.reloadData()
+                }
             }
         }
-        
     }
 
     // MARK: - Table view data source
@@ -72,17 +70,17 @@ class CarsTableViewController: UITableViewController {
         if editingStyle == .delete {
             
             let car = cars[indexPath.row]
-            
-            REST.deleteCar(car: car, onComplete: { (success) in
-                if success {
+            repository.delete(car: car) { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success:
                     self.cars.remove(at: indexPath.row)
                     DispatchQueue.main.async {
                         tableView.deleteRows(at: [indexPath], with: .fade)
                     }
-                    
                 }
-            })
-            
+            }
         }
     }
 

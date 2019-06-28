@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-enum CarError {
+enum CarError: Error {
     case url
-    case taskError(error: NSError)
+    case taskError(error: Error)
     case noResponse
     case noData
     case responseStatusCode(code: Int)
