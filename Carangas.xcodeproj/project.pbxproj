@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492D07BA22C62D8F004DAB1A /* CarsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492D07B922C62D8F004DAB1A /* CarsViewModel.swift */; };
 		49E877F522C5A392003009C0 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E877F422C5A392003009C0 /* NetworkConstants.swift */; };
 		49E877F922C5A78C003009C0 /* CarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E877F822C5A78C003009C0 /* CarService.swift */; };
 		49F28CAB22C5AFEE0012C485 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F28CAA22C5AFEE0012C485 /* NetworkEngine.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		0811F6A8EDBD7021ABDE3665 /* Pods-Carangas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carangas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Carangas/Pods-Carangas.release.xcconfig"; sourceTree = "<group>"; };
 		23D39E39FAC7AA7EBA453471 /* Pods_Carangas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Carangas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		492D07B922C62D8F004DAB1A /* CarsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModel.swift; sourceTree = "<group>"; };
 		49E877F422C5A392003009C0 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		49E877F822C5A78C003009C0 /* CarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarService.swift; sourceTree = "<group>"; };
 		49F28CAA22C5AFEE0012C485 /* NetworkEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
@@ -56,6 +58,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492D07B522C62D1E004DAB1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A19C4BF51F92C91C00A25342 /* Car.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		492D07B622C62D2D004DAB1A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A19C4BE51F92C57D00A25342 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		492D07B722C62D52004DAB1A /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A16BA8661F953B940045AD32 /* AddEditViewController.swift */,
+				A19C4BE31F92C57D00A25342 /* CarViewController.swift */,
+				A19C4BF71F92C99600A25342 /* CarsTableViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		492D07B822C62D60004DAB1A /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				492D07B922C62D8F004DAB1A /* CarsViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		49E877F322C5A37A003009C0 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,14 +173,13 @@
 		A19C4BE01F92C57D00A25342 /* Carangas */ = {
 			isa = PBXGroup;
 			children = (
+				492D07B822C62D60004DAB1A /* View Model */,
+				492D07B722C62D52004DAB1A /* View Controller */,
+				492D07B622C62D2D004DAB1A /* View */,
+				492D07B522C62D1E004DAB1A /* Model */,
 				49E877F622C5A75A003009C0 /* Network */,
 				A19C4BE11F92C57D00A25342 /* AppDelegate.swift */,
-				A19C4BE31F92C57D00A25342 /* CarViewController.swift */,
-				A19C4BF71F92C99600A25342 /* CarsTableViewController.swift */,
 				A19C4BF31F92C8CB00A25342 /* REST.swift */,
-				A19C4BF51F92C91C00A25342 /* Car.swift */,
-				A19C4BE51F92C57D00A25342 /* Main.storyboard */,
-				A16BA8661F953B940045AD32 /* AddEditViewController.swift */,
 				A19C4BE81F92C57D00A25342 /* Assets.xcassets */,
 				A19C4BEA1F92C57D00A25342 /* LaunchScreen.storyboard */,
 				A19C4BED1F92C57D00A25342 /* Info.plist */,
@@ -289,6 +324,7 @@
 				A19C4BF81F92C99600A25342 /* CarsTableViewController.swift in Sources */,
 				49E877F922C5A78C003009C0 /* CarService.swift in Sources */,
 				A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */,
+				492D07BA22C62D8F004DAB1A /* CarsViewModel.swift in Sources */,
 				A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */,
 				49F28CAB22C5AFEE0012C485 /* NetworkEngine.swift in Sources */,
 				A19C4BF41F92C8CB00A25342 /* REST.swift in Sources */,
