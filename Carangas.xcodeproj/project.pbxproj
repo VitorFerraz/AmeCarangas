@@ -272,7 +272,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Carangas/Pods-Carangas-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Carangas/Pods-Carangas-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -287,7 +287,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Carangas/Pods-Carangas-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Carangas/Pods-Carangas-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5405AA4253CD5BF20DBA6C19 /* [CP] Check Pods Manifest.lock */ = {
