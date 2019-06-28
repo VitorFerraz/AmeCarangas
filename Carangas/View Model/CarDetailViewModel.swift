@@ -8,7 +8,6 @@
 
 import UIKit
 final class CarDetailViewModel {
-    private let repository: CarRepository
     private (set) var car: Car
     private var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -18,8 +17,7 @@ final class CarDetailViewModel {
         formatter.alwaysShowsDecimalSeparator = true
         return formatter
     }()
-    init(repository: CarRepository = CarRemoteRepository(), car: Car) {
-        self.repository = repository
+    init(car: Car) {
         self.car = car
     }
     
@@ -41,8 +39,4 @@ final class CarDetailViewModel {
     var nameSearch: String {
         return (car.name + "+" + car.brand).replacingOccurrences(of: " ", with: "+")
     }
-    
-    
-    
-    
 }

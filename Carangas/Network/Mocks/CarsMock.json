@@ -1,0 +1,13 @@
+[{
+	"_id": "5d1662ae1fda670004ac5547",
+	"brand": "ASTON MARTIN",
+	"gasType": 2,
+	"name": "Model Range",
+	"price": 9000000
+}, {
+	"_id": "5d1662cc1fda670004ac5548",
+	"brand": "Acura",
+	"gasType": 1,
+	"name": "NSX GT3",
+	"price": 4000000
+}]

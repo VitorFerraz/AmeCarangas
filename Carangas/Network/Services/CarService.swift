@@ -53,7 +53,12 @@ extension CarService: TargetType {
     }
     
     var sampleData: Data {
-        return Data()
+        switch self {
+        case .loadCars:
+            return [Car].fromJSON("CarsMock")
+        default:
+            return Data()
+        }
     }
     
     var task: Task {

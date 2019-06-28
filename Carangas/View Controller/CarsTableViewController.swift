@@ -9,7 +9,7 @@
 import UIKit
 
 class CarsTableViewController: UITableViewController {
-    let viewModel = CarsViewModel()
+    var viewModel = CarsViewModel()
     var label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center

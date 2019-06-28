@@ -17,6 +17,10 @@
 		883E803E22C65CA3009DF7FC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 883E803D22C65CA3009DF7FC /* WebKit.framework */; };
 		88B2C12E22C69EC3001A2F83 /* CarMockRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B2C12D22C69EC3001A2F83 /* CarMockRemoteRepository.swift */; };
 		88B2C13022C69ED0001A2F83 /* CarRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B2C12F22C69ED0001A2F83 /* CarRemoteRepository.swift */; };
+		88B2C13322C6A306001A2F83 /* Decodable+fromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B2C13222C6A306001A2F83 /* Decodable+fromJSON.swift */; };
+		88B2C13622C6A588001A2F83 /* CarsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 88B2C13522C6A588001A2F83 /* CarsMock.json */; };
+		88B2C14622C6A69E001A2F83 /* CarsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B2C14522C6A69E001A2F83 /* CarsViewModelTests.swift */; };
+		88B2C14822C6A6CC001A2F83 /* CarDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B2C14722C6A6CC001A2F83 /* CarDetailViewModelTests.swift */; };
 		A16BA8671F953B940045AD32 /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16BA8661F953B940045AD32 /* AddEditViewController.swift */; };
 		A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE11F92C57D00A25342 /* AppDelegate.swift */; };
 		A19C4BE41F92C57D00A25342 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BE31F92C57D00A25342 /* CarViewController.swift */; };
@@ -28,6 +32,16 @@
 		A19C4BF81F92C99600A25342 /* CarsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19C4BF71F92C99600A25342 /* CarsTableViewController.swift */; };
 		B2D85B95F9C7E20BD53759C8 /* Pods_Carangas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23D39E39FAC7AA7EBA453471 /* Pods_Carangas.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88B2C14022C6A59A001A2F83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A19C4BD61F92C57D00A25342 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A19C4BDD1F92C57D00A25342;
+			remoteInfo = Carangas;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0811F6A8EDBD7021ABDE3665 /* Pods-Carangas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carangas.release.xcconfig"; path = "Pods/Target Support Files/Pods-Carangas/Pods-Carangas.release.xcconfig"; sourceTree = "<group>"; };
@@ -42,6 +56,12 @@
 		883E803D22C65CA3009DF7FC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		88B2C12D22C69EC3001A2F83 /* CarMockRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMockRemoteRepository.swift; sourceTree = "<group>"; };
 		88B2C12F22C69ED0001A2F83 /* CarRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRemoteRepository.swift; sourceTree = "<group>"; };
+		88B2C13222C6A306001A2F83 /* Decodable+fromJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+fromJSON.swift"; sourceTree = "<group>"; };
+		88B2C13522C6A588001A2F83 /* CarsMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CarsMock.json; sourceTree = "<group>"; };
+		88B2C13B22C6A599001A2F83 /* CarangasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarangasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88B2C13F22C6A59A001A2F83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88B2C14522C6A69E001A2F83 /* CarsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewModelTests.swift; sourceTree = "<group>"; };
+		88B2C14722C6A6CC001A2F83 /* CarDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewModelTests.swift; sourceTree = "<group>"; };
 		A16BA8661F953B940045AD32 /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 		A19C4BDE1F92C57D00A25342 /* Carangas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carangas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19C4BE11F92C57D00A25342 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +77,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		88B2C13822C6A599001A2F83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A19C4BDB1F92C57D00A25342 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -116,6 +143,7 @@
 		49E877F622C5A75A003009C0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				88B2C13422C6A577001A2F83 /* Mocks */,
 				49F28CB222C5B4E10012C485 /* Repositories */,
 				49F28CA922C5AFA70012C485 /* Engine */,
 				49E877F722C5A766003009C0 /* Services */,
@@ -159,10 +187,37 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		88B2C13122C6A2DE001A2F83 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				88B2C13222C6A306001A2F83 /* Decodable+fromJSON.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		88B2C13422C6A577001A2F83 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				88B2C13522C6A588001A2F83 /* CarsMock.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		88B2C13C22C6A599001A2F83 /* CarangasTests */ = {
+			isa = PBXGroup;
+			children = (
+				88B2C13F22C6A59A001A2F83 /* Info.plist */,
+				88B2C14522C6A69E001A2F83 /* CarsViewModelTests.swift */,
+				88B2C14722C6A6CC001A2F83 /* CarDetailViewModelTests.swift */,
+			);
+			path = CarangasTests;
+			sourceTree = "<group>";
+		};
 		A19C4BD51F92C57D00A25342 = {
 			isa = PBXGroup;
 			children = (
 				A19C4BE01F92C57D00A25342 /* Carangas */,
+				88B2C13C22C6A599001A2F83 /* CarangasTests */,
 				A19C4BDF1F92C57D00A25342 /* Products */,
 				7651860368E492DDD0E48D98 /* Pods */,
 				DF2D480B3AD22F9D41543496 /* Frameworks */,
@@ -173,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				A19C4BDE1F92C57D00A25342 /* Carangas.app */,
+				88B2C13B22C6A599001A2F83 /* CarangasTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,6 +236,7 @@
 		A19C4BE01F92C57D00A25342 /* Carangas */ = {
 			isa = PBXGroup;
 			children = (
+				88B2C13122C6A2DE001A2F83 /* Extension */,
 				492D07B822C62D60004DAB1A /* View Model */,
 				492D07B722C62D52004DAB1A /* View Controller */,
 				492D07B622C62D2D004DAB1A /* View */,
@@ -206,6 +263,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		88B2C13A22C6A599001A2F83 /* CarangasTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88B2C14222C6A59A001A2F83 /* Build configuration list for PBXNativeTarget "CarangasTests" */;
+			buildPhases = (
+				88B2C13722C6A599001A2F83 /* Sources */,
+				88B2C13822C6A599001A2F83 /* Frameworks */,
+				88B2C13922C6A599001A2F83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88B2C14122C6A59A001A2F83 /* PBXTargetDependency */,
+			);
+			name = CarangasTests;
+			productName = CarangasTests;
+			productReference = 88B2C13B22C6A599001A2F83 /* CarangasTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A19C4BDD1F92C57D00A25342 /* Carangas */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A19C4BF01F92C57D00A25342 /* Build configuration list for PBXNativeTarget "Carangas" */;
@@ -231,10 +306,15 @@
 		A19C4BD61F92C57D00A25342 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Eric Brito";
 				TargetAttributes = {
+					88B2C13A22C6A599001A2F83 = {
+						CreatedOnToolsVersion = 10.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A19C4BDD1F92C57D00A25342;
+					};
 					A19C4BDD1F92C57D00A25342 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -255,15 +335,24 @@
 			projectRoot = "";
 			targets = (
 				A19C4BDD1F92C57D00A25342 /* Carangas */,
+				88B2C13A22C6A599001A2F83 /* CarangasTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		88B2C13922C6A599001A2F83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A19C4BDC1F92C57D00A25342 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88B2C13622C6A588001A2F83 /* CarsMock.json in Resources */,
 				A19C4BEC1F92C57D00A25342 /* LaunchScreen.storyboard in Resources */,
 				A19C4BE91F92C57D00A25342 /* Assets.xcassets in Resources */,
 				A19C4BE71F92C57D00A25342 /* Main.storyboard in Resources */,
@@ -324,6 +413,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		88B2C13722C6A599001A2F83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88B2C14822C6A6CC001A2F83 /* CarDetailViewModelTests.swift in Sources */,
+				88B2C14622C6A69E001A2F83 /* CarsViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A19C4BDA1F92C57D00A25342 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,10 +441,19 @@
 				49F28CB422C5B4FD0012C485 /* CarRepository.swift in Sources */,
 				88B2C13022C69ED0001A2F83 /* CarRemoteRepository.swift in Sources */,
 				A19C4BE21F92C57D00A25342 /* AppDelegate.swift in Sources */,
+				88B2C13322C6A306001A2F83 /* Decodable+fromJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88B2C14122C6A59A001A2F83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A19C4BDD1F92C57D00A25342 /* Carangas */;
+			targetProxy = 88B2C14022C6A59A001A2F83 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A19C4BE51F92C57D00A25342 /* Main.storyboard */ = {
@@ -368,6 +475,47 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		88B2C14322C6A59A001A2F83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CarangasTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ame-fastforward.CarangasTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Carangas.app/Carangas";
+			};
+			name = Debug;
+		};
+		88B2C14422C6A59A001A2F83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CarangasTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "ame-fastforward.CarangasTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Carangas.app/Carangas";
+			};
+			name = Release;
+		};
 		A19C4BEE1F92C57D00A25342 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -510,6 +658,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		88B2C14222C6A59A001A2F83 /* Build configuration list for PBXNativeTarget "CarangasTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88B2C14322C6A59A001A2F83 /* Debug */,
+				88B2C14422C6A59A001A2F83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A19C4BD91F92C57D00A25342 /* Build configuration list for PBXProject "Carangas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
