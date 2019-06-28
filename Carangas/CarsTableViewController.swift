@@ -36,20 +36,18 @@ class CarsTableViewController: UITableViewController {
     }
     
     func loadCars() {
-        REST.loadCars(onComplete: { (cars) in
-            self.cars = cars
-            DispatchQueue.main.async {
-                self.label.text = "Não existem carros cadastrados."
-                self.tableView.reloadData()
+        REST.loadCars(completion: { (result) in
+            switch result {
+            case .success(let cars):
+                self.cars = cars
+                DispatchQueue.main.async {
+                    self.label.text = "Não existem carros cadastrados."
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
-        }) { (error: CarError) in
-            switch error {
-                case .responseStatusCode(let code):
-                    print(code)
-                default:
-                    break
-            }
-        }
+        })
         
     }
 
@@ -73,13 +71,15 @@ class CarsTableViewController: UITableViewController {
             
             let car = cars[indexPath.row]
             
-            REST.deleteCar(car: car, onComplete: { (success) in
-                if success {
+            REST.delete(car: car, completion: { (result) in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success:
                     self.cars.remove(at: indexPath.row)
                     DispatchQueue.main.async {
                         tableView.deleteRows(at: [indexPath], with: .fade)
                     }
-                    
                 }
             })
             

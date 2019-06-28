@@ -61,16 +61,16 @@ class AddEditViewController: UIViewController {
     }
     
     func loadBrands() {
-        REST.loadBrands { (brands) in
-            guard let brands = brands else {
-                print("ERRO")
-                return
+        REST.loadBrands { (result) in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let brands):
+                self.brands = brands.sorted(by: {$0.fipe_name < $1.fipe_name})
+                DispatchQueue.main.async {
+                    self.brandPickerView.reloadAllComponents()
+                }
             }
-            self.brands = brands.sorted(by: {$0.fipe_name < $1.fipe_name})
-            DispatchQueue.main.async {
-                self.brandPickerView.reloadAllComponents()
-            }
-            
         }
     }
 
@@ -96,11 +96,11 @@ class AddEditViewController: UIViewController {
             car.price = 0
         }
         if car._id == nil {
-            REST.saveCar(car: car) { (success) in
+            REST.save(car: car) { (success) in
                 self.goBack()
             }
         } else {
-            REST.updateCar(car: car) { (success) in
+            REST.update(car: car) { (success) in
                 self.goBack()
             }
         }

@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-enum CarError {
+enum CarError: Error {
     case url
-    case taskError(error: NSError)
+    case taskError(error: Error)
     case noResponse
     case noData
     case responseStatusCode(code: Int)
@@ -39,73 +39,75 @@ class REST {
     
     private static let session = URLSession(configuration: configuration)
 
-    class func loadCars(onComplete: @escaping ([Car]) -> Void, onError: @escaping (CarError) -> Void) {
+    class func loadCars(completion: @escaping (Result<[Car], CarError>) -> Void) {
         guard let url = URL(string: basePath) else {
-            onError(CarError.url)
+            completion(.failure(CarError.url))
             return
         }
         session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
-            if error != nil {
-                onError(CarError.taskError(error: error! as NSError))
+            if let error = error {
+                completion(.failure(CarError.taskError(error: error)))
             } else {
                 guard let response = response as? HTTPURLResponse else {
-                    onError(CarError.noResponse)
+                    completion(.failure(CarError.noResponse))
                     return
                 }
                 if response.statusCode == 200 {
                     guard let data = data else {
-                        onError(CarError.noData)
+                        completion(.failure(CarError.noData))
                         return
                     }
                     do {
                         let cars = try JSONDecoder().decode([Car].self, from: data)
-                        onComplete(cars)
+                        completion(.success(cars))
+
                     } catch {
-                        onError(CarError.invalidJSON)
+                        completion(.failure(CarError.invalidJSON))
+
                     }
                     
                 } else {
-                    onError(CarError.responseStatusCode(code: response.statusCode))
+                    completion(.failure(CarError.responseStatusCode(code: response.statusCode)))
                 }
             }
         }.resume()
     }
-    
-    class func saveCar(car: Car, onComplete: @escaping (Bool) -> Void) {
-        applyOperation(car: car, operation: .save, completion: onComplete)
-    }
-    
-    class func updateCar(car: Car, onComplete: @escaping (Bool) -> Void) {
-        applyOperation(car: car, operation: .update, completion: onComplete)
-    }
+    class func save(car: Car, completion: @escaping (Result<Void, CarError>)-> Void) {
+        applyOperation(car: car, operation: .save, completion: completion)
 
-    class func deleteCar(car: Car, onComplete: @escaping (Bool) -> Void) {
-        applyOperation(car: car, operation: .delete, completion: onComplete)
+    }
+    class func delete(car: Car, completion: @escaping (Result<Void, CarError>)-> Void) {
+        applyOperation(car: car, operation: .delete, completion: completion)
+
+    }
+    class func update(car: Car, completion: @escaping (Result<Void, CarError>)-> Void) {
+        applyOperation(car: car, operation: .update, completion: completion)
     }
     
-    class func loadBrands(onComplete: @escaping ([Brand]?) -> Void) {
+    class func loadBrands(completion: @escaping (Result<[Brand],CarError>) -> Void) {
         guard let url = URL(string: FIPEPath) else {
-            onComplete(nil)
+            completion(.failure(CarError.url))
             return
         }
         session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
-            if error != nil {
-                onComplete(nil)
+            if let error = error {
+                return completion(.failure(CarError.taskError(error: error)))
             } else {
                 guard let response = response as? HTTPURLResponse, response.statusCode == 200, let data = data else {
-                    onComplete(nil)
-                    return
+                    return completion(.failure(CarError.noData))
+                    
                 }
                 if let brands = try? JSONDecoder().decode([Brand].self, from: data) {
-                    onComplete(brands)
+                    return completion(.success(brands))
                 } else {
-                    onComplete(nil)
+                    return completion(.failure(CarError.invalidJSON))
                 }
             }
+          
         }.resume()
     }
 
-    private class func applyOperation(car: Car, operation: RESTOperation, completion: @escaping (Bool) -> Void) {
+    private class func applyOperation(car: Car, operation: RESTOperation, completion: @escaping (Result<Void,CarError>) -> Void) {
         let urlString = basePath + "/" + (car._id ?? "")
         var httpMethod = "GET"
         switch operation {
@@ -118,8 +120,7 @@ class REST {
         }
         
         guard let url = URL(string: urlString) else {
-            completion(false)
-            return
+            return completion(.failure(CarError.url))
         }
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod
@@ -127,18 +128,13 @@ class REST {
         request.httpBody = json
         
         session.dataTask(with: request) { (data, response, error) in
-            if error == nil {
-                guard let response = response as? HTTPURLResponse, let data = data, response.statusCode == 200 else {
-                    completion(false)
-                    return
-                }
-                print("Operação efetuada com sucesso:")
-                if let newCar = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions()) {
-                    print("Car:", newCar)
-                }
-                completion(true)
+            if let error = error {
+                return completion(.failure(CarError.taskError(error: error)))
             } else {
-                completion(false)
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    return completion(.failure(CarError.noData))
+                }    
+                return completion(.success(()))
             }
         }.resume()
     }
