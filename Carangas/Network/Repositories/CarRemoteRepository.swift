@@ -9,7 +9,9 @@
 import Moya
 struct CarRemoteRepository: CarRepository {
     private var engine: NetworkEngine<CarService> {
-        return NetworkEngine<CarService>(provider: MoyaProvider<CarService>())
+        let logPlugin = NetworkLoggerPlugin(verbose: true, cURL: true, output: nil, requestDataFormatter: nil, responseDataFormatter: nil)
+        let provider = MoyaProvider<CarService>(plugins:[logPlugin])
+        return NetworkEngine<CarService>(provider: provider)
     }
     
     func save(car: Car, completion: @escaping (Result<Void, CarError>) -> Void) {
