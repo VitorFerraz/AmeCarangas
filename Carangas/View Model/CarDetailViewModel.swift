@@ -12,8 +12,8 @@ final class CarDetailViewModel {
     private var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        formatter.currencySymbol = "R$"
         formatter.locale = Locale(identifier: "pt-BR")
+        formatter.currencySymbol = Locale(identifier: "pt-BR").currencySymbol
         formatter.alwaysShowsDecimalSeparator = true
         return formatter
     }()

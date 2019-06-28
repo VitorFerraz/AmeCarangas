@@ -31,7 +31,7 @@ final class AddEditCarViewModel {
     }
     
     var price: String {
-        formatter.currencySymbol = "R$ "
+        formatter.currencySymbol = Locale(identifier: "pt-BR").currencySymbol
         return formatter.string(from: NSNumber(value: car?.price ?? 0.0)) ?? "R$ ..."
     }
     
