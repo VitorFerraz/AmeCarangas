@@ -18,11 +18,11 @@ class CarDetailViewModelTests: XCTestCase {
     }
 
     override func tearDown() {
-        super.tearDown()
         sut = nil
+        super.tearDown()
     }
     
-    func testViewModelCurrencyFormatter_ExpectToFormatValue() {
+    func testFormatter_ExpectToFormatValueToReal() {
         XCTAssertEqual(sut.price, "R$ 9.000.000,00")
     }
 

@@ -17,19 +17,17 @@ class AddEditViewModelTests: XCTestCase {
     }
 
     override func tearDown() {
+        sut = nil
         super.tearDown()
     }
 
-    func testLoadBrands_ExpectToLoadItems() {
+    func testLoadBrands_ExpectToGetNotEmptyList() {
         let expectation = XCTestExpectation(description: "Load brands from fipe api")
-        
         sut.loadBrands {
             expectation.fulfill()
             XCTAssertGreaterThanOrEqual(self.sut.numberOfBrands, 0)
             XCTAssertEqual(self.sut.getBrand(at: 0)?.fipe_name, "AM Gen")
         }
         self.wait(for: [expectation], timeout: 10)
-
     }
-
 }

@@ -17,13 +17,13 @@ class CarsViewModelTests: XCTestCase {
     }
     
     override func tearDown() {
-        super.tearDown()
         sut = nil
+        super.tearDown()
     }
     
-    func testLoadCards_ExpectGetListOfCars() {
+    func testLoadCars_ExpectToGetNotEmptyList() {
         sut.loadCars {
-            XCTAssertGreaterThanOrEqual(self.sut.numberOfCars, 0)
+            XCTAssertGreaterThanOrEqual(self.sut.numberOfCars, 1)
         }
     }
 
